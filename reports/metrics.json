@@ -1,0 +1,185 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "sklearn": "1.8.0",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "seed": 42
+  },
+  "encoder": {
+    "id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "frozen": true,
+    "backend": "ONNX Runtime CPU",
+    "max_tokens": 256,
+    "sha256": {
+      "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+      "model.onnx": "6fd5d72fe4589f189f8ebc006442dbb529bb7ce38f8082112682524616046452"
+    }
+  },
+  "selected_model": "minilm_logistic_c16",
+  "selection_rule": "maximum validation macro-F1 among four fixed candidates",
+  "split_counts": {
+    "train": 6994,
+    "calibration": 1499,
+    "validation": 1499,
+    "test": 3080
+  },
+  "removed_training_duplicates_or_overlaps": 11,
+  "validation": {
+    "tfidf_logistic": {
+      "accuracy": 0.8645763842561708,
+      "macro_f1": 0.8665899672519946,
+      "log_loss": 0.5030229936727993,
+      "ece_10_bins": 0.022968115558182785,
+      "accuracy_wilson_95": [
+        0.8463192724905293,
+        0.8809696181017992
+      ]
+    },
+    "minilm_logistic_c4": {
+      "accuracy": 0.9092728485657104,
+      "macro_f1": 0.9122464012891313,
+      "log_loss": 0.33810531419743284,
+      "ece_10_bins": 0.009565743711843532,
+      "accuracy_wilson_95": [
+        0.8936673933642225,
+        0.9227859174837072
+      ]
+    },
+    "minilm_logistic_c16": {
+      "accuracy": 0.9172781854569713,
+      "macro_f1": 0.920548170282266,
+      "log_loss": 0.32480663806990695,
+      "ece_10_bins": 0.011100006942112285,
+      "accuracy_wilson_95": [
+        0.9022436631126212,
+        0.9301793946467594
+      ]
+    },
+    "minilm_logistic_c64": {
+      "accuracy": 0.9112741827885257,
+      "macro_f1": 0.9140047581005877,
+      "log_loss": 0.33467602912856476,
+      "ece_10_bins": 0.01317293713393963,
+      "accuracy_wilson_95": [
+        0.8958081230294107,
+        0.9246376245463818
+      ]
+    }
+  },
+  "test": {
+    "tfidf_logistic": {
+      "accuracy": 0.875974025974026,
+      "macro_f1": 0.8758382758436946,
+      "log_loss": 0.4528143567978555,
+      "ece_10_bins": 0.014779138012651925,
+      "accuracy_wilson_95": [
+        0.8638627015191638,
+        0.8871486344716342
+      ]
+    },
+    "minilm_logistic_c4": {
+      "accuracy": 0.9207792207792208,
+      "macro_f1": 0.92067063458255,
+      "log_loss": 0.28524220809790496,
+      "ece_10_bins": 0.01140944213241803,
+      "accuracy_wilson_95": [
+        0.9107081356584384,
+        0.9298019605799676
+      ]
+    },
+    "minilm_logistic_c16": {
+      "accuracy": 0.9308441558441558,
+      "macro_f1": 0.9307605803027095,
+      "log_loss": 0.26455364993840835,
+      "ece_10_bins": 0.012948260846345908,
+      "accuracy_wilson_95": [
+        0.9213364297520719,
+        0.9392784604549995
+      ]
+    },
+    "minilm_logistic_c64": {
+      "accuracy": 0.9279220779220779,
+      "macro_f1": 0.9278153971252171,
+      "log_loss": 0.2719858976435444,
+      "ece_10_bins": 0.014334770123788391,
+      "accuracy_wilson_95": [
+        0.9182456377083892,
+        0.9365323768303602
+      ]
+    }
+  },
+  "temperatures": {
+    "tfidf_logistic": 0.4828531517293582,
+    "minilm_logistic_c4": 0.5874285149286903,
+    "minilm_logistic_c16": 0.7443480965251379,
+    "minilm_logistic_c64": 0.9803485206099706
+  },
+  "routing_validation": {
+    "threshold": 0.68,
+    "accepted": 1350,
+    "total": 1499,
+    "coverage": 0.9006004002668445,
+    "accuracy": 0.9622222222222222,
+    "accuracy_wilson_95": [
+      0.9506701763895814,
+      0.9711511061001871
+    ]
+  },
+  "routing_test": {
+    "threshold": 0.68,
+    "accepted": 2792,
+    "total": 3080,
+    "coverage": 0.9064935064935065,
+    "accuracy": 0.9691977077363897,
+    "accuracy_wilson_95": [
+      0.962115964215237,
+      0.9749900578140509
+    ]
+  },
+  "routing_policy": "max coverage with validation Wilson 95% lower bound >= .95 and coverage >= .10",
+  "typo_test": {
+    "accuracy": 0.8003246753246753,
+    "macro_f1": 0.8023476847874814,
+    "log_loss": 0.6871195932617479,
+    "ece_10_bins": 0.0123522968644373,
+    "accuracy_wilson_95": [
+      0.7858363000363189,
+      0.8140648103190249
+    ]
+  },
+  "typo_routing": {
+    "threshold": 0.68,
+    "accepted": 2226,
+    "total": 3080,
+    "coverage": 0.7227272727272728,
+    "accuracy": 0.9348607367475292,
+    "accuracy_wilson_95": [
+      0.9238415026652941,
+      0.9443816034064557
+    ]
+  },
+  "review_probes": {
+    "n": 24,
+    "reviewed": 20,
+    "description": "hand-written out-of-scope and ambiguous probes, not a representative OOD benchmark"
+  },
+  "latency_ms": {
+    "p50": 3.905979500018475,
+    "p95": 5.775860100072804,
+    "samples": 60,
+    "batch_size": 1,
+    "includes": "tokenization, encoder, classifier, calibration; excludes HTTP"
+  },
+  "artifact": {
+    "sha256": "03c1fa12255e185973e6ed687d5fadbc815866e78cce917c33aa21e28d41e310",
+    "environment": {
+      "python": "3.12.14",
+      "sklearn": "1.8.0",
+      "numpy": "2.3.5",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+      "seed": 42
+    }
+  }
+}
